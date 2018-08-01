@@ -1,0 +1,15 @@
+# Created by .ignore support plugin (hsz.mobi)
+.idea
+*.iml
+out
+gen
+.gitignore
+.idea/caxs-test.iml
+.idea/misc.xml
+.idea/modules.xml
+.idea/workspace.xml
+caxs-api/target/
+caxs-core/target/
+caxs-service/target/
+caxs-web/target/
+logs/

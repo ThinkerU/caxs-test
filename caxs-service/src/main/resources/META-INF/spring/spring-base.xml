@@ -9,7 +9,9 @@
    <!-- Service列表 -->
    <!-- 账号服务 -->
 	<dubbo:service interface="com.caxs.base.service.IUsrRoleService" ref="usrRoleService" />
-	
+	<dubbo:service interface="com.caxs.base.service.ILoginService" ref="loginService" />
+	<dubbo:service interface="com.caxs.base.service.IHmUserService" ref="hmUserService" />
+
 
 
 

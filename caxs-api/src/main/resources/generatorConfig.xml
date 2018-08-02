@@ -10,7 +10,7 @@
 
 	<!-- 指定外部classPath，这里是MySQL数据库驱动地址 -->
 	<!-- E:\WorkSpace\MMD\mdd-service\src\lib\classes12.jar-->
-	<classPathEntry location="C:\Users\kevin\.m2\repository\mysql\mysql-connector-java\5.1.34\mysql-connector-java-5.1.34.jar" />
+	<classPathEntry location="C:\Users\lenovo\.m2\repository\mysql\mysql-connector-java\5.1.34\mysql-connector-java-5.1.34.jar" />
 
 	<!-- 主要配置内容，指定生成哪些MyBais文件，targetRunTime指定生成代码的运行目标，defau<ltModelType指定一张数据表生成一个领域模型类 -->
 	<!-- targetRuntime="MyBatis3Simple"：不生成Example.java文件，进而不生成XXXByExample方法，仅提供最基础的CRUD方法 -->
@@ -26,9 +26,9 @@
 
 		<!-- 1.指定JDBC数据库连接信息 -->
 		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
-						connectionURL="jdbc:mysql://10.10.10.218:3306/hades?useUnicode=true&amp;characterEncoding=utf8"
-						userId="hermes_sit"
-						password="hermes_sit">
+						connectionURL="jdbc:mysql://haomo-tech.com:3317/org?characterEncoding=utf8"
+						userId="org"
+						password="org@haomo">
 		</jdbcConnection>
 
 		<!-- 类型解析器 -->
@@ -40,7 +40,7 @@
 
 		<!-- 2. 指定采用何种方式，生成何种对象 -->
 		<!-- 生成领域模型（实体类）和查询对象，	在tragetProject目录下的targetPackage(demo.model)包中生成与数据表同名的领域模型 (Pet.java)， 生成名为PetExample.java的查询对象 -->
-		<javaModelGenerator targetPackage="com.caxs.caxs.base.domain"
+		<javaModelGenerator targetPackage="com.caxs.base.domain"
 							targetProject="./src/main/java">
 			<property name="enableSubPackages" value="true" />
 			<property name="trimStrings" value="true" />
@@ -49,14 +49,14 @@
 		</javaModelGenerator>
 
 		<!-- 生成 MyBatis的SQL映射文件，PetMapper.xml -->
-		<sqlMapGenerator targetPackage="daos"
+		<sqlMapGenerator targetPackage="daos.base"
 						 targetProject="../caxs-service/src/main/resources">
 			<property name="enableSubPackages" value="true" />
 		</sqlMapGenerator>
 
 		<!--生成MyBatis的DAO接口，PetMapper.java -->
 		<!-- type表示javaClient的类型，支持XMLMAPPER:SQL映射文件+接口，ANNOTATEDMAPPER：SQLBuilder+注解+接口，MIXEDMAPPER：混合形式 -->
-		<javaClientGenerator type="XMLMAPPER" targetPackage="com.caxs.caxs.base.dao"
+		<javaClientGenerator type="XMLMAPPER" targetPackage="com.caxs.base.daos"
 							 targetProject="../caxs-service/src/main/java">
 			<property name="enableSubPackages" value="true" />
 			<!-- 指定父接口，一般不使用 -->
@@ -74,7 +74,7 @@
 		</table>-->
 		<!--<table tableName="pet" domainObjectName="Pet" />-->
 
-		<table tableName="hd_cci_detail" domainObjectName="CciDetail"
+		<table tableName="hm_user" domainObjectName="HmUser"
 			   enableCountByExample="false" enableUpdateByExample="false"
 			   enableDeleteByExample="false" enableSelectByExample="false"
 			   selectByExampleQueryId="false"/>
